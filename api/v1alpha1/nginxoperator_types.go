@@ -25,11 +25,15 @@ import (
 
 // NginxOperatorSpec defines the desired state of NginxOperator
 type NginxOperatorSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// Port is the port number to expose on the Nginx Pod
+	Port *int32 `json:"port,omitempty"`
 
-	// Foo is an example field of NginxOperator. Edit nginxoperator_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Replicas is the number of deployment replicas to scale
+	Replicas *int32 `json:"replicas,omitempty"`
+
+	// ForceRedploy is any string, modifying this field
+	// instructs  the Operator to redeploy the Operand
+	ForceRedploy string `json:"forceRedploy,omitempty"`
 }
 
 // NginxOperatorStatus defines the observed state of NginxOperator

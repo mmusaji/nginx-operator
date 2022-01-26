@@ -19,6 +19,10 @@ package main
 import (
 	"flag"
 	"os"
+	"embed"
+
+	//go:embed assets/nginx_deployment.yaml
+	var deployment embed.FS
 
 	// Import all Kubernetes client auth plugins (e.g. Azure, GCP, OIDC, etc.)
 	// to ensure that exec-entrypoint and run can make use of them.
